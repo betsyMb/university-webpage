@@ -1,15 +1,18 @@
 .Container {
   background: rgb(2, 0, 36);
   background: linear-gradient(
-    132deg,
+    49deg,
     rgba(2, 0, 36, 1) 31%,
     rgba(40, 28, 70, 1) 79%,
     rgba(112, 79, 134, 1) 95%,
     rgba(0, 212, 255, 1) 100%
   );
-  padding-top: 100px;
 }
 
-.active {
-  color: #f27ea5;
+.button {
+  background-color: #33beeb !important;
+}
+
+.button:hover {
+  background-color: #007cf9 !important;
 }

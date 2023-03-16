@@ -1,0 +1,97 @@
+/* Variables */
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+  }
+  
+  /* CSS */
+  .performace_spinner {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .performace_spinner div {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 3.5s cubic-bezier(0.5, 0, 0.5, 1) forwards;
+    border-color: #6b0b0b transparent transparent transparent;
+  }
+  
+  .performace_spinner div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  
+  .performace_spinner div:hover {
+    animation: lds-ring-reverse 1s cubic-bezier(0.5, 0, 0.5, 1) forwards,
+      counter-out 1s;
+  }
+  
+  span {
+    animation: counter 3s forwards alternate ease-in-out;
+    counter-reset: num var(--num);
+    position: absolute;
+    top: 26px;
+    left: 26px;
+  }
+  span::after {
+    content: counter(num);
+  }
+  
+  /* span:hover {
+    animation: counter-out 2.7s forwards ease-in-out;
+  } */
+  /* Animations */
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+      border-color: #f70000 #f70000 #f70000 transparent;
+    }
+    50% {
+      border-color: #ea4e10 transparent transparent transparent;
+    }
+    90% {
+      transform: rotate(360deg);
+      border-color: #e3ff0f transparent transparent #e3ff0f;
+    }
+    100% {
+      border-color: #4bff05;
+    }
+  }
+  
+  @keyframes lds-ring-reverse {
+    0% {
+      border-color: #4bff05;
+      transform: rotate(360deg);
+    }
+  
+    100% {
+      border-color: #f70000;
+    }
+  }
+  
+  @keyframes counter {
+    from {
+      --num: 0;
+    }
+    to {
+      --num: 100;
+    }
+  }
+  @keyframes counter-out {
+    from {
+      color: white;
+    }
+    to {
+      color: red;
+    }
+  }
+  
