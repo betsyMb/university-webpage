@@ -1,4 +1,4 @@
-#University webpage
+# University webpage
 
 In this project you can see some of the technologies it is based on.
 
